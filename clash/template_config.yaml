@@ -15,7 +15,7 @@ mode: Rule
 
 # 设置日志输出级别 (默认级别：silent，即不输出任何内容，以避免因日志内容过大而导致程序内存溢出）。
 # 5 个级别：silent / info / warning / error / debug。级别越高日志输出量越大，越倾向于调试，若需要请自行开启。
-log-level: silent
+log-level: info
 # Clash 的 RESTful API
 external-controller: "0.0.0.0:9090"
 
@@ -56,15 +56,6 @@ dns:
 # 注意：
 # (1) 如果您为了确保 DNS 解析结果无污染，请仅保留列表内以 tls:// 开头的 DNS 服务器，但是通常对于国内没有太大必要。
 # (2) 如果您不在乎可能解析到污染的结果，更加追求速度。请将 nameserver 列表的服务器插入至 fallback 列表内，并移除重复项。
-
-proxies:
-  # 节点
-  
-
-proxy-groups:
-  # 策略组
-  
-
 
 # 规则
 rules:
@@ -116,8 +107,6 @@ rules:
   - RULE-SET,gfw_list,✈️ 起飞出国
   - RULE-SET,greatfire_list,✈️ 起飞出国
   - RULE-SET,reject_list,⛔️ 广告拦截
-
-  - RULE-SET,test,✈️ 起飞出国
 
   # anti-ads
   - DOMAIN-KEYWORD,adservice,⛔️ 广告拦截
@@ -2071,222 +2060,222 @@ rules:
   - DOMAIN-KEYWORD,aria2,🔰 国内直连
   - MATCH,🐟 漏网之鱼
 
-# rule-providers:
-#   AdBlock:
-#     {
-#       type: http,
-#       behavior: classical,
-#       path: ./Filter/AdBlock,
-#       url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/AdBlock.yaml,
-#       interval: 3600,
-#     }
-#   Apple:
-#     {
-#       type: http,
-#       behavior: classical,
-#       path: ./Filter/Apple,
-#       url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/Apple.yaml,
-#       interval: 3600,
-#     }
-#   Adobe:
-#     {
-#       type: http,
-#       behavior: classical,
-#       path: ./Filter/Adobe,
-#       url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/Adobe.yaml,
-#       interval: 3600,
-#     }
-#   Amazon:
-#     {
-#       type: http,
-#       behavior: classical,
-#       path: ./Filter/Amazon,
-#       url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/Amazon.yaml,
-#       interval: 3600,
-#     }
+rule-providers:
+  AdBlock:
+    {
+      type: http,
+      behavior: classical,
+      path: ./Filter/AdBlock,
+      url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/AdBlock.yaml,
+      interval: 3600,
+    }
+  Apple:
+    {
+      type: http,
+      behavior: classical,
+      path: ./Filter/Apple,
+      url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/Apple.yaml,
+      interval: 3600,
+    }
+  Adobe:
+    {
+      type: http,
+      behavior: classical,
+      path: ./Filter/Adobe,
+      url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/Adobe.yaml,
+      interval: 3600,
+    }
+  Amazon:
+    {
+      type: http,
+      behavior: classical,
+      path: ./Filter/Amazon,
+      url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/Amazon.yaml,
+      interval: 3600,
+    }
 
-#   China:
-#     {
-#       type: http,
-#       behavior: classical,
-#       path: ./Filter/China,
-#       url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/China.yaml,
-#       interval: 3600,
-#     }
+  China:
+    {
+      type: http,
+      behavior: classical,
+      path: ./Filter/China,
+      url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/China.yaml,
+      interval: 3600,
+    }
 
-#   Dler:
-#     {
-#       type: http,
-#       behavior: classical,
-#       path: ./Filter/Dler,
-#       url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/Dler.yaml,
-#       interval: 3600,
-#     }
+  Dler:
+    {
+      type: http,
+      behavior: classical,
+      path: ./Filter/Dler,
+      url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/Dler.yaml,
+      interval: 3600,
+    }
 
-#   Facebook:
-#     {
-#       type: http,
-#       behavior: classical,
-#       path: ./Filter/Facebook,
-#       url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/Facebook.yaml,
-#       interval: 3600,
-#     }
+  Facebook:
+    {
+      type: http,
+      behavior: classical,
+      path: ./Filter/Facebook,
+      url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/Facebook.yaml,
+      interval: 3600,
+    }
 
-#   GitHub:
-#     {
-#       type: http,
-#       behavior: classical,
-#       path: ./Filter/GitHub,
-#       url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/GitHub.yaml,
-#       interval: 3600,
-#     }
-#   Google:
-#     {
-#       type: http,
-#       behavior: classical,
-#       path: ./Filter/Google,
-#       url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/Google.yaml,
-#       interval: 3600,
-#     }
+  GitHub:
+    {
+      type: http,
+      behavior: classical,
+      path: ./Filter/GitHub,
+      url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/GitHub.yaml,
+      interval: 3600,
+    }
+  Google:
+    {
+      type: http,
+      behavior: classical,
+      path: ./Filter/Google,
+      url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/Google.yaml,
+      interval: 3600,
+    }
 
-#   Microsoft:
-#     {
-#       type: http,
-#       behavior: classical,
-#       path: ./Filter/Microsoft,
-#       url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/Microsoft.yaml,
-#       interval: 3600,
-#     }
+  Microsoft:
+    {
+      type: http,
+      behavior: classical,
+      path: ./Filter/Microsoft,
+      url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/Microsoft.yaml,
+      interval: 3600,
+    }
 
-#   🎦 Netflix:
-#     {
-#       type: http,
-#       behavior: classical,
-#       path: ./Filter/🎦 Netflix,
-#       url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/🎦 Netflix.yaml,
-#       interval: 3600,
-#     }
+  🎦 Netflix:
+    {
+      type: http,
+      behavior: classical,
+      path: ./Filter/Netflix,
+      url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/Netflix.yaml,
+      interval: 3600,
+    }
 
-#   Spotify:
-#     {
-#       type: http,
-#       behavior: classical,
-#       path: ./Filter/Spotify,
-#       url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/Spotify.yaml,
-#       interval: 3600,
-#     }
-#   Speedtest:
-#     {
-#       type: http,
-#       behavior: classical,
-#       path: ./Filter/Speedtest,
-#       url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/Speedtest.yaml,
-#       interval: 3600,
-#     }
-#   Steam:
-#     {
-#       type: http,
-#       behavior: classical,
-#       path: ./Filter/Steam,
-#       url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/Steam.yaml,
-#       interval: 3600,
-#     }
+  Spotify:
+    {
+      type: http,
+      behavior: classical,
+      path: ./Filter/Spotify,
+      url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/Spotify.yaml,
+      interval: 3600,
+    }
+  Speedtest:
+    {
+      type: http,
+      behavior: classical,
+      path: ./Filter/Speedtest,
+      url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/Speedtest.yaml,
+      interval: 3600,
+    }
+  Steam:
+    {
+      type: http,
+      behavior: classical,
+      path: ./Filter/Steam,
+      url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/Steam.yaml,
+      interval: 3600,
+    }
 
-#   Telegram:
-#     {
-#       type: http,
-#       behavior: classical,
-#       path: ./Filter/Telegram,
-#       url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/Telegram.yaml,
-#       interval: 3600,
-#     }
-#   Twitter:
-#     {
-#       type: http,
-#       behavior: classical,
-#       path: ./Filter/Twitter,
-#       url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/Twitter.yaml,
-#       interval: 3600,
-#     }
-#   Tencent:
-#     {
-#       type: http,
-#       behavior: classical,
-#       path: ./Filter/Tencent,
-#       url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/Tencent.yaml,
-#       interval: 3600,
-#     }
+  Telegram:
+    {
+      type: http,
+      behavior: classical,
+      path: ./Filter/Telegram,
+      url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/Telegram.yaml,
+      interval: 3600,
+    }
+  Twitter:
+    {
+      type: http,
+      behavior: classical,
+      path: ./Filter/Twitter,
+      url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/Twitter.yaml,
+      interval: 3600,
+    }
+  Tencent:
+    {
+      type: http,
+      behavior: classical,
+      path: ./Filter/Tencent,
+      url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/Tencent.yaml,
+      interval: 3600,
+    }
 
-#   YouTube:
-#     {
-#       type: http,
-#       behavior: classical,
-#       path: ./Filter/YouTube,
-#       url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/YouTube.yaml,
-#       interval: 3600,
-#     }
+  YouTube:
+    {
+      type: http,
+      behavior: classical,
+      path: ./Filter/YouTube,
+      url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/YouTube.yaml,
+      interval: 3600,
+    }
 
-#   PayPal:
-#     {
-#       type: http,
-#       behavior: classical,
-#       path: ./Filter/PayPal,
-#       url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/PayPal.yaml,
-#       interval: 3600,
-#     }
-#   Proxy:
-#     {
-#       type: http,
-#       behavior: classical,
-#       path: ./Filter/Proxy,
-#       url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/Proxy.yaml,
-#       interval: 3600,
-#     }
-#   test:
-#     {
-#       type: http,
-#       behavior: classical,
-#       path: ./Filter/test,
-#       url: http://127.0.0.1:12345/,
-#       interval: 36000,
-#     }
-#   direct_list:
-#     {
-#       type: http,
-#       behavior: domain,
-#       path: ./Filter/direct_list,
-#       url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt,
-#       interval: 3600,
-#     }
-#   proxy_list:
-#     {
-#       type: http,
-#       behavior: domain,
-#       path: ./Filter/proxy_list,
-#       url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt,
-#       interval: 3600,
-#     }
-#   gfw_list:
-#     {
-#       type: http,
-#       behavior: domain,
-#       path: ./Filter/gfw_list,
-#       url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt,
-#       interval: 3600,
-#     }
-#   greatfire_list:
-#     {
-#       type: http,
-#       behavior: domain,
-#       path: ./Filter/greatfire_list,
-#       url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/greatfire.txt,
-#       interval: 3600,
-#     }
-#   reject_list:
-#     {
-#       type: http,
-#       behavior: domain,
-#       path: ./Filter/reject_list,
-#       url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt,
-#       interval: 3600,
-#     }
+  PayPal:
+    {
+      type: http,
+      behavior: classical,
+      path: ./Filter/PayPal,
+      url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/PayPal.yaml,
+      interval: 3600,
+    }
+  Proxy:
+    {
+      type: http,
+      behavior: classical,
+      path: ./Filter/Proxy,
+      url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/Proxy.yaml,
+      interval: 3600,
+    }
+  test:
+    {
+      type: http,
+      behavior: classical,
+      path: ./Filter/test,
+      url: http://127.0.0.1:12345/,
+      interval: 36000,
+    }
+  direct_list:
+    {
+      type: http,
+      behavior: domain,
+      path: ./Filter/direct_list,
+      url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt,
+      interval: 3600,
+    }
+  proxy_list:
+    {
+      type: http,
+      behavior: domain,
+      path: ./Filter/proxy_list,
+      url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt,
+      interval: 3600,
+    }
+  gfw_list:
+    {
+      type: http,
+      behavior: domain,
+      path: ./Filter/gfw_list,
+      url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt,
+      interval: 3600,
+    }
+  greatfire_list:
+    {
+      type: http,
+      behavior: domain,
+      path: ./Filter/greatfire_list,
+      url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/greatfire.txt,
+      interval: 3600,
+    }
+  reject_list:
+    {
+      type: http,
+      behavior: domain,
+      path: ./Filter/reject_list,
+      url: https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt,
+      interval: 3600,
+    }
