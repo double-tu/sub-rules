@@ -82,31 +82,31 @@ rules:
   - DOMAIN-SUFFIX,gov.cn,🔰 国内直连
 
   # 订阅规则
-  - RULE-SET,AdBlock,⛔️ 广告拦截
-  - RULE-SET,Proxy,✈️ 起飞出国
   - RULE-SET,Apple,🔰 国内直连
+  - RULE-SET,China,🔰 国内直连
+  - RULE-SET,direct_list,🔰 国内直连
+  - RULE-SET,Tencent,🔰 国内直连
+  - RULE-SET,Microsoft,🔰 国内直连
+  - RULE-SET,AdBlock,⛔️ 广告拦截
+  - RULE-SET,reject_list,⛔️ 广告拦截
+  - RULE-SET,🎦 Netflix,🎦 Netflix
   - RULE-SET,Adobe,✈️ 起飞出国
   - RULE-SET,Amazon,✈️ 起飞出国
   - RULE-SET,Dler,✈️ 起飞出国
   - RULE-SET,Facebook,✈️ 起飞出国
   - RULE-SET,GitHub,✈️ 起飞出国
   - RULE-SET,Google,✈️ 起飞出国
-  - RULE-SET,Microsoft,🔰 国内直连
-  - RULE-SET,🎦 Netflix,🎦 Netflix
   - RULE-SET,Speedtest,✈️ 起飞出国
   - RULE-SET,Steam,✈️ 起飞出国
   - RULE-SET,Spotify,✈️ 起飞出国
   - RULE-SET,Telegram,✈️ 起飞出国
   - RULE-SET,Twitter,✈️ 起飞出国
-  - RULE-SET,Tencent,🔰 国内直连
   - RULE-SET,YouTube,✈️ 起飞出国
   - RULE-SET,PayPal,✈️ 起飞出国
-  - RULE-SET,China,🔰 国内直连
-  - RULE-SET,direct_list,🔰 国内直连
+  - RULE-SET,Proxy,✈️ 起飞出国
   - RULE-SET,proxy_list,✈️ 起飞出国
   - RULE-SET,gfw_list,✈️ 起飞出国
   - RULE-SET,greatfire_list,✈️ 起飞出国
-  - RULE-SET,reject_list,⛔️ 广告拦截
 
   # anti-ads
   - DOMAIN-KEYWORD,adservice,⛔️ 广告拦截
@@ -732,8 +732,7 @@ rules:
   - DOMAIN-SUFFIX,yangkeduo.com,🔰 国内直连
   - DOMAIN-SUFFIX,zhihu.com,🔰 国内直连
   - DOMAIN-SUFFIX,zhimg.com,🔰 国内直连
-  #USER-AGENT,NeteaseMusic*,🔰 国内直连
-  #USER-AGENT,%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90*,🔰 国内直连
+
 
   # (DNS Cache Pollution Protection)
   # > Google
