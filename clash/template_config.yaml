@@ -82,13 +82,13 @@ rules:
   - DOMAIN-SUFFIX,gov.cn,🔰 国内直连
 
   # 订阅规则
-  - RULE-SET,Apple,🔰 国内直连
-  - RULE-SET,China,🔰 国内直连
-  - RULE-SET,direct_list,🔰 国内直连
-  - RULE-SET,Tencent,🔰 国内直连
-  - RULE-SET,Microsoft,🔰 国内直连
   - RULE-SET,AdBlock,⛔️ 广告拦截
   - RULE-SET,reject_list,⛔️ 广告拦截
+  - RULE-SET,Apple,🔰 国内直连
+  - RULE-SET,Tencent,🔰 国内直连
+  - RULE-SET,Microsoft,🔰 国内直连
+  - RULE-SET,China,🔰 国内直连
+  - RULE-SET,direct_list,🔰 国内直连
   - RULE-SET,🎦 Netflix,🎦 Netflix
   - RULE-SET,Adobe,✈️ 起飞出国
   - RULE-SET,Amazon,✈️ 起飞出国
