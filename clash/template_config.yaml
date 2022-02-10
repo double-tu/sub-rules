@@ -279,14 +279,6 @@ rule-providers:
       url: https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Filter/Proxy.yaml,
       interval: 3600,
     }
-  test:
-    {
-      type: http,
-      behavior: classical,
-      path: ./Filter/test,
-      url: http://127.0.0.1:12345/,
-      interval: 36000,
-    }
   direct_list:
     {
       type: http,
