@@ -57,33 +57,33 @@ dns:
 # (1) 如果您为了确保 DNS 解析结果无污染，请仅保留列表内以 tls:// 开头的 DNS 服务器，但是通常对于国内没有太大必要。
 # (2) 如果您不在乎可能解析到污染的结果，更加追求速度。请将 nameserver 列表的服务器插入至 fallback 列表内，并移除重复项。
 
-#   # 规则
-# rules:
-#   # 广告禁止
-#   - DOMAIN-SUFFIX,access-sngapm.qcloud.com, ⛔️ 广告拦截
+  # 规则
+rules:
+  # 广告禁止
+  - DOMAIN-SUFFIX,access-sngapm.qcloud.com, ⛔️ 广告拦截
 
-#   # 直连
-#   - DOMAIN-SUFFIX,tsinghua.edu.cn,🔰 国内直连
-#   - DOMAIN-SUFFIX,doubanio.com,🔰 国内直连
-#   - DOMAIN-SUFFIX,aliyun.com,🔰 国内直连
-#   - DOMAIN-SUFFIX,edu.cn,🔰 国内直连
-#   - DOMAIN-SUFFIX,translate.googleapis.com,🔰 国内直连
-#   - DOMAIN-SUFFIX,battle.net,🔰 国内直连
-#   - DOMAIN-SUFFIX,gov.cn,🔰 国内直连
+  # 直连
+  - DOMAIN-SUFFIX,tsinghua.edu.cn,🔰 国内直连
+  - DOMAIN-SUFFIX,doubanio.com,🔰 国内直连
+  - DOMAIN-SUFFIX,aliyun.com,🔰 国内直连
+  - DOMAIN-SUFFIX,edu.cn,🔰 国内直连
+  - DOMAIN-SUFFIX,translate.googleapis.com,🔰 国内直连
+  - DOMAIN-SUFFIX,battle.net,🔰 国内直连
+  - DOMAIN-SUFFIX,gov.cn,🔰 国内直连
 
-#   # 出国起飞
-#   - DOMAIN-SUFFIX,facebook.com,✈️ 起飞出国
-#   - DOMAIN-SUFFIX,v2ex.com,✈️ 起飞出国
-#   - DOMAIN-SUFFIX,hk1lib.org,✈️ 起飞出国
-#   - DOMAIN-SUFFIX,z-lib.org,✈️ 起飞出国
-#   - DOMAIN-SUFFIX,hk1lib.org,✈️ 起飞出国
-#   - DOMAIN-SUFFIX,sg1lib.org,✈️ 起飞出国
-#   - DOMAIN-SUFFIX,zlibcdn.com,✈️ 起飞出国
-#   - DOMAIN-SUFFIX,apps.apple.com,✈️ 起飞出国
-#   - DOMAIN-SUFFIX,notion.so,✈️ 起飞出国
-#   - DOMAIN-SUFFIX,deepl.com,✈️ 起飞出国
-#   - DOMAIN-SUFFIX,raindrop.io,✈️ 起飞出国
-#   - DOMAIN-SUFFIX,adguard.com,✈️ 起飞出国
+  # 出国起飞
+  - DOMAIN-SUFFIX,facebook.com,✈️ 起飞出国
+  - DOMAIN-SUFFIX,v2ex.com,✈️ 起飞出国
+  - DOMAIN-SUFFIX,hk1lib.org,✈️ 起飞出国
+  - DOMAIN-SUFFIX,z-lib.org,✈️ 起飞出国
+  - DOMAIN-SUFFIX,hk1lib.org,✈️ 起飞出国
+  - DOMAIN-SUFFIX,sg1lib.org,✈️ 起飞出国
+  - DOMAIN-SUFFIX,zlibcdn.com,✈️ 起飞出国
+  - DOMAIN-SUFFIX,apps.apple.com,✈️ 起飞出国
+  - DOMAIN-SUFFIX,notion.so,✈️ 起飞出国
+  - DOMAIN-SUFFIX,deepl.com,✈️ 起飞出国
+  - DOMAIN-SUFFIX,raindrop.io,✈️ 起飞出国
+  - DOMAIN-SUFFIX,adguard.com,✈️ 起飞出国
 
 #   # 订阅规则
 #   - RULE-SET,AdBlock,⛔️ 广告拦截
