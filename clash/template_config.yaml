@@ -59,7 +59,20 @@ dns:
 
 # 规则
 rules:
-  # Forme
+  # 广告禁止
+  - DOMAIN-SUFFIX,access-sngapm.qcloud.com, ⛔️ 广告拦截
+
+  # 直连
+  - DOMAIN-SUFFIX,tsinghua.edu.cn,🔰 国内直连
+  - DOMAIN-SUFFIX,doubanio.com,🔰 国内直连
+  - DOMAIN-SUFFIX,aliyun.com,🔰 国内直连
+  - DOMAIN-SUFFIX,edu.cn,🔰 国内直连
+  - DOMAIN-SUFFIX,translate.googleapis.com,🔰 国内直连
+  - DOMAIN-SUFFIX,battle.net,🔰 国内直连
+  - DOMAIN-SUFFIX,gov.cn,🔰 国内直连
+
+  # 出国起飞
+  - DOMAIN-SUFFIX,facebook.com,✈️ 起飞出国
   - DOMAIN-SUFFIX,v2ex.com,✈️ 起飞出国
   - DOMAIN-SUFFIX,hk1lib.org,✈️ 起飞出国
   - DOMAIN-SUFFIX,z-lib.org,✈️ 起飞出国
@@ -71,15 +84,6 @@ rules:
   - DOMAIN-SUFFIX,deepl.com,✈️ 起飞出国
   - DOMAIN-SUFFIX,raindrop.io,✈️ 起飞出国
   - DOMAIN-SUFFIX,adguard.com,✈️ 起飞出国
-
-  # 直连
-  - DOMAIN-SUFFIX,tsinghua.edu.cn,🔰 国内直连
-  - DOMAIN-SUFFIX,doubanio.com,🔰 国内直连
-  - DOMAIN-SUFFIX,aliyun.com,🔰 国内直连
-  - DOMAIN-SUFFIX,edu.cn,🔰 国内直连
-  - DOMAIN-SUFFIX,translate.googleapis.com,🔰 国内直连
-  - DOMAIN-SUFFIX,battle.net,🔰 国内直连
-  - DOMAIN-SUFFIX,gov.cn,🔰 国内直连
 
   # 订阅规则
   - RULE-SET,AdBlock,⛔️ 广告拦截
