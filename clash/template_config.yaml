@@ -70,6 +70,7 @@ rules:
   - DOMAIN-SUFFIX,translate.googleapis.com,🔰 国内直连
   - DOMAIN-SUFFIX,battle.net,🔰 国内直连
   - DOMAIN-SUFFIX,gov.cn,🔰 国内直连
+  - DOMAIN-SUFFIX,1password.com,🔰 国内直连
 
   # 出国起飞
   - DOMAIN-SUFFIX,facebook.com,✈️ 起飞出国
