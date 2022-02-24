@@ -87,7 +87,7 @@ rules:
   - DOMAIN-SUFFIX,adguard.com,✈️ 起飞出国
 
   # 订阅规则
-  - RULE-SET,AdBlock,🅳 Disney+
+  - RULE-SET,Disney+,🅳 Disney+
 
 rule-providers:
   Disney+:
