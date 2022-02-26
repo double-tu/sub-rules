@@ -62,10 +62,10 @@ rules:
   # 广告禁止
   - DOMAIN-SUFFIX,access-sngapm.qcloud.com, ⛔️ 广告拦截
   # 本地/局域网地址
-  - DOMAIN-SUFFIX,ip6-localhost,no-resolve
-  - DOMAIN-SUFFIX,ip6-loopback,no-resolve
-  - DOMAIN-SUFFIX,local,no-resolve
-  - DOMAIN-SUFFIX,localhost,no-resolve
+  - DOMAIN-SUFFIX,ip6-localhost,🔰 国内直连
+  - DOMAIN-SUFFIX,ip6-loopback,🔰 国内直连
+  - DOMAIN-SUFFIX,local,🔰 国内直连
+  - DOMAIN-SUFFIX,localhost,🔰 国内直连
   - IP-CIDR,10.0.0.0/8,no-resolve
   - IP-CIDR,100.64.0.0/10,no-resolve
   - IP-CIDR,127.0.0.0/8,no-resolve
