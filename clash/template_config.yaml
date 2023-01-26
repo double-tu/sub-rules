@@ -97,6 +97,7 @@ rules:
   - DOMAIN-SUFFIX,gov.cn,🔰 国内直连
   - DOMAIN-SUFFIX,1password.com,🔰 国内直连
 
+
   # 出国起飞
   - DOMAIN-SUFFIX,facebook.com,✈️ 起飞出国
   - DOMAIN-SUFFIX,v2ex.com,✈️ 起飞出国
@@ -110,6 +111,7 @@ rules:
   - DOMAIN-SUFFIX,deepl.com,✈️ 起飞出国
   - DOMAIN-SUFFIX,raindrop.io,✈️ 起飞出国
   - DOMAIN-SUFFIX,adguard.com,✈️ 起飞出国
+  - DOMAIN-SUFFIX,live.com,✈️ 起飞出国
 
   # 订阅规则
   - RULE-SET,Disney+,🅳 Disney+
