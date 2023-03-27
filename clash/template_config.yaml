@@ -99,6 +99,7 @@ rules:
 
   # ChatGPT
   - DOMAIN-SUFFIX,openai.com,🤖 ChatGPT
+  - DOMAIN-SUFFIX,bing.com,🤖 ChatGPT
 
 
   # 出国起飞
