@@ -116,6 +116,7 @@ rules:
   - DOMAIN-SUFFIX,raindrop.io,✈️ 起飞出国
   - DOMAIN-SUFFIX,adguard.com,✈️ 起飞出国
   - DOMAIN-SUFFIX,live.com,✈️ 起飞出国
+  - DOMAIN-SUFFIX,appcenter.ms,✈️ 起飞出国
 
   # 订阅规则
   - RULE-SET,Disney+,🅳 Disney+
