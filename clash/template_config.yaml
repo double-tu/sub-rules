@@ -66,7 +66,6 @@ tun:
     - tcp://8.8.8.8:53
     - tcp://8.8.4.4:53
 
-
 # 规则
 rules:
   # 广告禁止
@@ -101,7 +100,6 @@ rules:
   - DOMAIN-SUFFIX,openai.com,🤖 ChatGPT
   - DOMAIN-SUFFIX,bing.com,🤖 ChatGPT
 
-
   # 出国起飞
   - DOMAIN-SUFFIX,facebook.com,✈️ 起飞出国
   - DOMAIN-SUFFIX,v2ex.com,✈️ 起飞出国
@@ -117,6 +115,8 @@ rules:
   - DOMAIN-SUFFIX,adguard.com,✈️ 起飞出国
   - DOMAIN-SUFFIX,live.com,✈️ 起飞出国
   - DOMAIN-SUFFIX,appcenter.ms,✈️ 起飞出国
+  - DOMAIN-SUFFIX,javdb.com,✈️ 起飞出国
+  - DOMAIN-SUFFIX,javbus.com,✈️ 起飞出国
 
   # 订阅规则
   - RULE-SET,Disney+,🅳 Disney+
