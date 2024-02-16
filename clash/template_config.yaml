@@ -100,6 +100,7 @@ rules:
   - DOMAIN-SUFFIX,openai.com,🤖 ChatGPT
   - DOMAIN-SUFFIX,bing.com,🤖 ChatGPT
   - DOMAIN-SUFFIX,gemini.google.com,🤖 ChatGPT
+  - DOMAIN-SUFFIX,ciciai.com,🤖 ChatGPT
 
   # 出国起飞
   - DOMAIN-SUFFIX,facebook.com,✈️ 起飞出国
