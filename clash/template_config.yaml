@@ -119,6 +119,7 @@ rules:
   - DOMAIN-SUFFIX,appcenter.ms,✈️ 起飞出国
   - DOMAIN-SUFFIX,javdb.com,✈️ 起飞出国
   - DOMAIN-SUFFIX,javbus.com,✈️ 起飞出国
+  - DOMAIN-SUFFIX,api.chatanywhere.cn,✈️ 起飞出国
 
   # 订阅规则
   - RULE-SET,Disney+,🅳 Disney+
