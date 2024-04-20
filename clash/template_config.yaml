@@ -102,6 +102,9 @@ rules:
   - DOMAIN-SUFFIX,gemini.google.com,🤖 ChatGPT
   - DOMAIN-SUFFIX,ciciai.com,🤖 ChatGPT
 
+  # 美国
+  - DOMAIN-SUFFIX,hub.docker.com,🇺🇲 美国节点
+
   # 出国起飞
   - DOMAIN-SUFFIX,facebook.com,✈️ 起飞出国
   - DOMAIN-SUFFIX,v2ex.com,✈️ 起飞出国
@@ -120,7 +123,6 @@ rules:
   - DOMAIN-SUFFIX,javdb.com,✈️ 起飞出国
   - DOMAIN-SUFFIX,javbus.com,✈️ 起飞出国
   - DOMAIN-SUFFIX,api.chatanywhere.cn,✈️ 起飞出国
-
   # 订阅规则
   - RULE-SET,Disney+,🅳 Disney+
 
