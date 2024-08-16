@@ -66,6 +66,11 @@ tun:
     - tcp://8.8.8.8:53
     - tcp://8.8.4.4:53
 
+# 脚本
+script:
+  shortcuts:
+    sshproxy: dst_port == 22 and (geoip(resolve_ip(host)) != 'CN' or geoip(dst_ip) != 'CN')
+
 # 规则
 rules:
   # 广告禁止
@@ -98,7 +103,8 @@ rules:
   - DOMAIN-SUFFIX,1password.com,🔰 国内直连
 
   # SSH 节点
-  - DST-PORT,22,🖥️ SSH节点
+  - SCRIPT,sshproxy,🖥️ SSH节点
+  # - DST-PORT,22,🖥️ SSH节点
 
   # ChatGPT
   - DOMAIN-SUFFIX,openai.com,🤖 ChatGPT
