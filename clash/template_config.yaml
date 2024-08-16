@@ -97,6 +97,9 @@ rules:
   - DOMAIN-SUFFIX,gov.cn,🔰 国内直连
   - DOMAIN-SUFFIX,1password.com,🔰 国内直连
 
+  # SSH 节点
+  - DST-PORT,22,🖥️ SSH节点
+
   # ChatGPT
   - DOMAIN-SUFFIX,openai.com,🤖 ChatGPT
   - DOMAIN-SUFFIX,bing.com,🤖 ChatGPT
