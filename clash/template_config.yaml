@@ -112,6 +112,7 @@ rules:
   - DOMAIN-SUFFIX,gemini.google.com,🤖 ChatGPT
   - DOMAIN-SUFFIX,ciciai.com,🤖 ChatGPT
   - DOMAIN-SUFFIX,chatgpt.com,🤖 ChatGPT
+  - DOMAIN-SUFFIX,googleapis.com,🤖 ChatGPT
 
   # 非通用网络
   - DOMAIN-SUFFIX,cloudfront.net,™️非通用网络
