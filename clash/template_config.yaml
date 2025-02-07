@@ -135,6 +135,8 @@ rules:
   - DOMAIN-SUFFIX,javdb.com,✈️ 起飞出国
   - DOMAIN-SUFFIX,javbus.com,✈️ 起飞出国
   - DOMAIN-SUFFIX,api.chatanywhere.cn,✈️ 起飞出国
+  - DOMAIN-SUFFIX,api.chatanywhere.tech,✈️ 起飞出国
+  - DOMAIN-SUFFIX,api2.aigcbest.top,✈️ 起飞出国
   - DOMAIN-SUFFIX,challenges.cloudflare.com,✈️ 起飞出国
   - DOMAIN-SUFFIX,copilot.microsoft.com,✈️ 起飞出国
 
