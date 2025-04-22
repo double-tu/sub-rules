@@ -2,3 +2,4 @@
 payload:
   - DOMAIN-SUFFIX,live.com
   - DOMAIN-SUFFIX,live123.com
+  - DOMAIN-SUFFIX,github.com
