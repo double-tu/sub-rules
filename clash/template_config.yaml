@@ -37,6 +37,9 @@ dns:
     - 8.8.8.8
     - 119.29.29.29
     - 1.0.0.1
+  nameserver-policy:
+    "*.tutool.top": system  # 使用系统DNS（路由器）
+    "tutool.top": system  # 使用系统DNS（路由器）
 
   fallback:
     - https://dns.google/dns-query
@@ -47,6 +50,9 @@ dns:
     geoip: true
     ipcidr:
       - 240.0.0.0/4
+  fake-ip-filter:
+    - "+.tutool.top"  # 新增
+    - "tutool.top"
 
 # Clash DNS 请求逻辑：
 # (1) 当访问一个域名时， nameserver 与 fallback 列表内的所有服务器并发请求，得到域名对应的 IP 地址。
