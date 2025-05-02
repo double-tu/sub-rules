@@ -114,6 +114,7 @@ rules:
   - DOMAIN-SUFFIX,gov.cn,🔰 国内直连
   - DOMAIN-SUFFIX,1password.com,🔰 国内直连
   - DOMAIN-SUFFIX,mnapi.com,🔰 国内直连
+  - DOMAIN-SUFFIX,tutool.top,🔰 国内直连
 
   # SSH 节点
   # - SCRIPT,sshproxy,🖥️ SSH节点
