@@ -153,6 +153,7 @@ rules:
   - DOMAIN-SUFFIX,api2.aigcbest.top,✈️ 起飞出国
   - DOMAIN-SUFFIX,challenges.cloudflare.com,✈️ 起飞出国
   - DOMAIN-SUFFIX,copilot.microsoft.com,✈️ 起飞出国
+  - DOMAIN-SUFFIX,discordapp.net,✈️ 起飞出国
 
   # 订阅规则
   - RULE-SET,Disney+,🅳 Disney+
