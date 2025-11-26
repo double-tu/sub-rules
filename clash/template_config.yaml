@@ -115,10 +115,6 @@ rules:
   - DOMAIN-SUFFIX,1password.com,🔰 国内直连
   - DOMAIN-SUFFIX,tutool.top,🔰 国内直连
 
-  # SSH 节点
-  # - SCRIPT,sshproxy,🖥️ SSH节点
-  - DST-PORT,22,🖥️ SSH节点
-
   # ChatGPT
   - DOMAIN-SUFFIX,openai.com,🤖 ChatGPT
   - DOMAIN-SUFFIX,bing.com,🤖 ChatGPT
@@ -130,6 +126,7 @@ rules:
 
   # 非通用网络
   - DOMAIN-SUFFIX,cloudfront.net,™️非通用网络
+  - DOMAIN-SUFFIX,github.com,™️非通用网络
 
   # 出国起飞
   - DOMAIN-SUFFIX,facebook.com,✈️ 起飞出国
@@ -158,6 +155,10 @@ rules:
   # 订阅规则
   - RULE-SET,Disney+,🅳 Disney+
   - RULE-SET,Microsoft,🤖 ChatGPT
+  
+  # SSH 节点
+  # - SCRIPT,sshproxy,🖥️ SSH节点
+  - DST-PORT,22,🖥️ SSH节点
 
 rule-providers:
   Disney+:
