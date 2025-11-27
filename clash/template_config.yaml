@@ -195,7 +195,7 @@ rules:
   - RULE-SET,ChatGPT_3_openai,🤖 ChatGPT
   - RULE-SET,ChatGPT_4_claude,🤖 ChatGPT
   - RULE-SET,Microsoft,🤖 ChatGPT
-  
+
   # 起飞出国 -> ✈️ 起飞出国 (主要代理策略组)
   - RULE-SET,Proxy_1,✈️ 起飞出国
   - RULE-SET,Proxy_2_speedtest,✈️ 起飞出国
@@ -206,7 +206,7 @@ rules:
   - RULE-SET,Proxy_7_dler,✈️ 起飞出国
   - RULE-SET,Proxy_8_paypal,✈️ 起飞出国
   - RULE-SET,Proxy_9_lite,✈️ 起飞出国
-  - RULE-SET,Proxy_10_semporia,✈️ 起飛出国
+  - RULE-SET,Proxy_10_semporia,✈️ 起飞出国
   - RULE-SET,Proxy_11_domain,✈️ 起飞出国
   - RULE-SET,Proxy_12_gfw_domain,✈️ 起飞出国
   - RULE-SET,Proxy_13_greatfire_domain,✈️ 起飞出国
