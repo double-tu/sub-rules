@@ -153,27 +153,365 @@ rules:
   - DOMAIN-SUFFIX,discordapp.net,✈️ 起飞出国
   - DOMAIN-SUFFIX,futunn.com,✈️ 起飞出国
   # 订阅规则
-  - RULE-SET,Disney+,🅳 Disney+
+  # 广告拦截 -> REJECT (阻止访问)
+  - RULE-SET,AdBlock_1,REJECT
+  - RULE-SET,AdBlock_2_quanx,REJECT
+  - RULE-SET,AdBlock_3,REJECT
+  - RULE-SET,AdBlock_4,REJECT
+  - RULE-SET,AdBlock_5,REJECT
+  - RULE-SET,AdBlock_6,REJECT
+  - RULE-SET,AdBlock_7_domain,REJECT
+  
+  # 苹果服务 -> DIRECT (直连) 或 PROXY (代理)
+  # 通常建议直连，但部分服务（如iCloud Private Relay）可能需要代理
+  - RULE-SET,Apple_1,DIRECT
+  - RULE-SET,Apple_2,DIRECT
+  - RULE-SET,Apple_3,DIRECT
+  - RULE-SET,Apple_4,DIRECT
+  # 国内服务 -> DIRECT (直连)
+  - RULE-SET,Direct_1,DIRECT
+  - RULE-SET,Direct_2_lan,DIRECT
+  - RULE-SET,Direct_3_cn_domain,DIRECT
+  - RULE-SET,Direct_4_cn_ipcidr,DIRECT
+  - RULE-SET,Direct_5_unban,DIRECT
+  - RULE-SET,Direct_6,DIRECT
+  - RULE-SET,Direct_7_tencent,DIRECT
+  - RULE-SET,Direct_8_microsoft,DIRECT
+  - RULE-SET,Direct_9_domain,DIRECT
+  # Netflix -> 🎦 Netflix (流媒体策略组)
+  - RULE-SET,Netflix_1,🎦 Netflix
+  - RULE-SET,Netflix_2,🎦 Netflix
+  - RULE-SET,Netflix_3,🎦 Netflix
+  # 国外媒体 -> 🎬 国外媒体 (国外媒体策略组)
+  - RULE-SET,YouTube,🎬 国外媒体
+  - RULE-SET,Twitter,🎬 国外媒体
+  - RULE-SET,Telegram,🎬 国外媒体
+  - RULE-SET,Steam,🎬 国外媒体
+  - RULE-SET,Spotify,🎬 国外媒体
+  - RULE-SET,Facebook,🎬 国外媒体
+  # ChatGPT -> 🤖 ChatGPT (AI 服务策略组)
+  - RULE-SET,ChatGPT_1,🤖 ChatGPT
+  - RULE-SET,ChatGPT_2,🤖 ChatGPT
+  - RULE-SET,ChatGPT_3_openai,🤖 ChatGPT
+  - RULE-SET,ChatGPT_4_claude,🤖 ChatGPT
   - RULE-SET,Microsoft,🤖 ChatGPT
+  
+  # 起飞出国 -> ✈️ 起飞出国 (主要代理策略组)
+  - RULE-SET,Proxy_1,✈️ 起飞出国
+  - RULE-SET,Proxy_2_speedtest,✈️ 起飞出国
+  - RULE-SET,Proxy_3_google,✈️ 起飞出国
+  - RULE-SET,Proxy_4_github,✈️ 起飞出国
+  - RULE-SET,Proxy_5_adobe,✈️ 起飞出国
+  - RULE-SET,Proxy_6_amazon,✈️ 起飞出国
+  - RULE-SET,Proxy_7_dler,✈️ 起飞出国
+  - RULE-SET,Proxy_8_paypal,✈️ 起飞出国
+  - RULE-SET,Proxy_9_lite,✈️ 起飞出国
+  - RULE-SET,Proxy_10_semporia,✈️ 起飛出国
+  - RULE-SET,Proxy_11_domain,✈️ 起飞出国
+  - RULE-SET,Proxy_12_gfw_domain,✈️ 起飞出国
+  - RULE-SET,Proxy_13_greatfire_domain,✈️ 起飞出国
+
+  - RULE-SET,DisneyPlus,🅳 Disney+ # 对应您提供的策略组名称
   
   # SSH 节点
   # - SCRIPT,sshproxy,🖥️ SSH节点
   - DST-PORT,22,🖥️ SSH节点
 
 rule-providers:
-  Disney+:
-    {
-      type: http,
-      behavior: classical,
-      path: ./Filter/DisneyPlus,
-      url: https://raw.githubusercontent.com/pzg417/rules/111a98098ff7a293080d3727f88bb32e5052ceca/Disney_Plus,
-      interval: 3600,
-    }
+  # -------------------- ⛔️ 广告拦截 --------------------
+  AdBlock_1:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/double-tu/sub-rules@master/clash/Reject.yaml"
+    path: ./ruleset/AdBlock_1.yaml
+    interval: 300
+  AdBlock_2_quanx: # 注意：此规则为 quanx 格式，clash 可能无法完全兼容，通常可作为 domain 类型使用
+    type: http
+    behavior: domain # 假设为 domain 类型，如果包含复杂规则则可能不兼容
+    url: "https://cdn.jsdelivr.net/gh/double-tu/sub-rules@master/quanx/Tu_AdBlock.list"
+    path: ./ruleset/AdBlock_2_quanx.list
+    interval: 86400
+  AdBlock_3:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Quantumult/Filter/Guard/Advertising.list"
+    path: ./ruleset/AdBlock_3.yaml
+    interval: 86400
+  AdBlock_4:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/NobyDa/Script@master/QuantumultX/AdRule.list"
+    path: ./ruleset/AdBlock_4.yaml
+    interval: 86400
+  AdBlock_5:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/BanAD.list"
+    path: ./ruleset/AdBlock_5.yaml
+    interval: 86400
+  AdBlock_6:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Rule/AdBlock.yaml"
+    path: ./ruleset/AdBlock_6.yaml
+    interval: 86400
+  AdBlock_7_domain:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt"
+    path: ./ruleset/AdBlock_7_domain.txt
+    interval: 86400
+  # -------------------- 🍎 苹果服务 --------------------
+  Apple_1:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Quantumult/Filter/Extra/Apple/AppStore.list"
+    path: ./ruleset/Apple_1.yaml
+    interval: 86400
+  Apple_2:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Quantumult/Filter/Extra/Apple/AppStoreConnect.list"
+    path: ./ruleset/Apple_2.yaml
+    interval: 86400
+  Apple_3:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Apple.list"
+    path: ./ruleset/Apple_3.yaml
+    interval: 86400
+  Apple_4:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Rule/Apple.yaml"
+    path: ./ruleset/Apple_4.yaml
+    interval: 86400
+  # -------------------- 🔰 国内直连 --------------------
+  Direct_1:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/double-tu/sub-rules@master/clash/Direct.yaml"
+    path: ./ruleset/Direct_1.yaml
+    interval: 300
+  Direct_2_lan:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/LocalAreaNetwork.list"
+    path: ./ruleset/Direct_2_lan.yaml
+    interval: 86400
+  Direct_3_cn_domain:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ChinaDomain.list"
+    path: ./ruleset/Direct_3_cn_domain.yaml
+    interval: 86400
+  Direct_4_cn_ipcidr:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ChinaCompanyIp.list"
+    path: ./ruleset/Direct_4_cn_ipcidr.txt
+    interval: 86400
+  Direct_5_unban:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list"
+    path: ./ruleset/Direct_5_unban.yaml
+    interval: 86400 # 默认24小时更新
+  Direct_6:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Rule/China.yaml"
+    path: ./ruleset/Direct_6.yaml
+    interval: 86400
+  Direct_7_tencent:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Rule/Tencent.yaml"
+    path: ./ruleset/Direct_7_tencent.yaml
+    interval: 86400
+  Direct_8_microsoft:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Rule/Microsoft.yaml"
+    path: ./ruleset/Direct_8_microsoft.yaml
+    interval: 86400
+  Direct_9_domain:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt"
+    path: ./ruleset/Direct_9_domain.txt
+    interval: 86400
+  # -------------------- 🎦 Netflix --------------------
+  Netflix_1:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Semporia/ClashX-Pro@master/Filter/Netflix.yaml"
+    path: ./ruleset/Netflix_1.yaml
+    interval: 86400
+  Netflix_2:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Quantumult/Filter/StreamingMedia/Video/Netflix.list"
+    path: ./ruleset/Netflix_2.yaml
+    interval: 86400
+  Netflix_3:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Rule/Netflix.yaml"
+    path: ./ruleset/Netflix_3.yaml
+    interval: 86400
+  # -------------------- 🎬 国外媒体 --------------------
+  YouTube:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Rule/YouTube.yaml"
+    path: ./ruleset/YouTube.yaml
+    interval: 86400
+  Twitter:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Rule/Twitter.yaml"
+    path: ./ruleset/Twitter.yaml
+    interval: 86400
+  Telegram:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Rule/Telegram.yaml"
+    path: ./ruleset/Telegram.yaml
+    interval: 86400
+  Steam:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Rule/Steam.yaml"
+    path: ./ruleset/Steam.yaml
+    interval: 86400
+  Spotify:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Rule/Spotify.yaml"
+    path: ./ruleset/Spotify.yaml
+    interval: 86400
+  Facebook:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Rule/Facebook.yaml"
+    path: ./ruleset/Facebook.yaml
+    interval: 86400
+  # -------------------- 🤖 ChatGPT --------------------
+  ChatGPT_1:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/SukkaW/Surge@master/Source/non_ip/ai.conf"
+    path: ./ruleset/ChatGPT_1.yaml
+    interval: 86400
+  ChatGPT_2:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/feisan/Rules/refs/heads/main/lyf_ai.list"
+    path: ./ruleset/ChatGPT_2.yaml
+    interval: 86400
+  ChatGPT_3_openai:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OpenAi.list"
+    path: ./ruleset/ChatGPT_3_openai.yaml
+    interval: 86400
+  ChatGPT_4_claude:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/ClaudeAI.list"
+    path: ./ruleset/ChatGPT_4_claude.yaml
+    interval: 86400
+    
+  # -------------------- ✈️ 起飞出国 --------------------
+  Proxy_1:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/double-tu/sub-rules@master/clash/Global.yaml"
+    path: ./ruleset/Proxy_1.yaml
+    interval: 300
+  Proxy_2_speedtest:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Rule/Speedtest.yaml"
+    path: ./ruleset/Proxy_2_speedtest.yaml
+    interval: 86400
+  Proxy_3_google:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Rule/Google.yaml"
+    path: ./ruleset/Proxy_3_google.yaml
+    interval: 86400
+  Proxy_4_github:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Rule/GitHub.yaml"
+    path: ./ruleset/Proxy_4_github.yaml
+    interval: 86400
+  Proxy_5_adobe:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Rule/Adobe.yaml"
+    path: ./ruleset/Proxy_5_adobe.yaml
+    interval: 86400
+  Proxy_6_amazon:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Rule/Amazon.yaml"
+    path: ./ruleset/Proxy_6_amazon.yaml
+    interval: 86400
+  Proxy_7_dler:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Rule/Dler.yaml"
+    path: ./ruleset/Proxy_7_dler.yaml
+    interval: 86400
+  Proxy_8_paypal:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Rule/PayPal.yaml"
+    path: ./ruleset/Proxy_8_paypal.yaml
+    interval: 86400
+  Proxy_9_lite:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ProxyLite.list"
+    path: ./ruleset/Proxy_9_lite.yaml
+    interval: 86400
+  Proxy_10_semporia:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Semporia/Clash-X@master/Rule/Proxy.yaml"
+    path: ./ruleset/Proxy_10_semporia.yaml
+    interval: 86400
+  Proxy_11_domain:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt"
+    path: ./ruleset/Proxy_11_domain.txt
+    interval: 86400
+  Proxy_12_gfw_domain:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt"
+    path: ./ruleset/Proxy_12_gfw_domain.txt
+    interval: 86400
+  Proxy_13_greatfire_domain:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/greatfire.txt"
+    path: ./ruleset/Proxy_13_greatfire_domain.txt
+    interval: 86400
+  # -------------------- 您提供的额外规则 --------------------
+  DisneyPlus: # provider 名称不能包含+号，已修改
+    type: http
+    behavior: classical
+    path: ./ruleset/DisneyPlus.yaml
+    url: https://raw.githubusercontent.com/pzg417/rules/111a98098ff7a293080d3727f88bb32e5052ceca/Disney_Plus
+    interval: 3600
   Microsoft:
-    {
-      type: http,
-      behavior: classical,
-      path: ./Filter/Microsoft,
-      url: https://raw.githubusercontent.com/Semporia/Clash/a5e52de7e4fd3851a9b03500b9e4763902069e7f/Rule/Microsoft.yaml,
-      interval: 3600,
-    }
+    type: http
+    behavior: classical
+    path: ./ruleset/Microsoft.yaml
+    url: https://raw.githubusercontent.com/Semporia/Clash/a5e52de7e4fd3851a9b03500b9e4763902069e7f/Rule/Microsoft.yaml
+    interval: 3600
