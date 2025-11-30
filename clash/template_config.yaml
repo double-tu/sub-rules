@@ -127,8 +127,8 @@ rules:
   - DOMAIN-SUFFIX,openrouter.ai,🤖 ChatGPT
 
   # 非通用网络
-  - DOMAIN-SUFFIX,cloudfront.net,™️非通用网络
-  - DOMAIN-SUFFIX,github.com,™️非通用网络
+  - DOMAIN-SUFFIX,cloudfront.net,✈️ 起飞出国
+  - DOMAIN-SUFFIX,github.com,✈️ 起飞出国
 
   # 出国起飞
   - DOMAIN-SUFFIX,facebook.com,✈️ 起飞出国
@@ -180,6 +180,13 @@ rules:
   - RULE-SET,Direct_7_tencent,DIRECT
   - RULE-SET,Direct_8_microsoft,DIRECT
   - RULE-SET,Direct_9_domain,DIRECT
+    # ChatGPT -> 🤖 ChatGPT (AI 服务策略组)
+  - RULE-SET,ChatGPT_1,🤖 ChatGPT
+  - RULE-SET,ChatGPT_2,🤖 ChatGPT
+  - RULE-SET,ChatGPT_3_openai,🤖 ChatGPT
+  - RULE-SET,ChatGPT_4_claude,🤖 ChatGPT
+  - RULE-SET,Microsoft,🤖 ChatGPT
+  - RULE-SET,Proxy_3_google,🤖 ChatGPT
   # Netflix -> 🎦 Netflix (流媒体策略组)
   - RULE-SET,Netflix_1,🎦 Netflix
   - RULE-SET,Netflix_2,🎦 Netflix
@@ -191,17 +198,10 @@ rules:
   - RULE-SET,Steam,🎬 国外媒体
   - RULE-SET,Spotify,🎬 国外媒体
   - RULE-SET,Facebook,🎬 国外媒体
-  # ChatGPT -> 🤖 ChatGPT (AI 服务策略组)
-  - RULE-SET,ChatGPT_1,🤖 ChatGPT
-  - RULE-SET,ChatGPT_2,🤖 ChatGPT
-  - RULE-SET,ChatGPT_3_openai,🤖 ChatGPT
-  - RULE-SET,ChatGPT_4_claude,🤖 ChatGPT
-  - RULE-SET,Microsoft,🤖 ChatGPT
 
   # 起飞出国 -> ✈️ 起飞出国 (主要代理策略组)
   - RULE-SET,Proxy_1,✈️ 起飞出国
   - RULE-SET,Proxy_2_speedtest,✈️ 起飞出国
-  - RULE-SET,Proxy_3_google,✈️ 起飞出国
   - RULE-SET,Proxy_4_github,✈️ 起飞出国
   - RULE-SET,Proxy_5_adobe,✈️ 起飞出国
   - RULE-SET,Proxy_6_amazon,✈️ 起飞出国
