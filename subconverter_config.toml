@@ -1,7 +1,7 @@
 # subconverter 配置文件 (修正版)
 version = 1
 
-[common]
+[custom]
 api_mode = false
 api_access_token = "password"
 default_url = []
