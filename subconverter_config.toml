@@ -1,0 +1,468 @@
+# subconverter 配置文件 (修正版)
+version = 1
+
+[common]
+api_mode = false
+api_access_token = "password"
+default_url = []
+enable_insert = true
+insert_url = [""]
+prepend_insert_url = true
+exclude_remarks = ["(到期|剩余流量|时间|官网|产品)"]
+
+default_external_config = "https://raw.githubusercontent.com/double-tu/sub-rules/master/subconverter_config.ini"
+base_path = "base"
+
+clash_rule_base = "https://raw.githubusercontent.com/double-tu/sub-rules/master/clash/template_config.yaml"
+surge_rule_base = "base/all_base.tpl"
+surfboard_rule_base = "base/all_base.tpl"
+mellow_rule_base = "base/all_base.tpl"
+quan_rule_base = "base/all_base.tpl"
+quanx_rule_base = "https://raw.githubusercontent.com/double-tu/sub-rules/master/quanx/template_config.conf"
+loon_rule_base = "https://raw.githubusercontent.com/double-tu/sub-rules/master/loon/template_config.conf"
+sssub_rule_base = "base/all_base.tpl"
+singbox_rule_base = "base/all_base.tpl"
+
+proxy_config = "SYSTEM"
+proxy_ruleset = "SYSTEM"
+proxy_subscription = "NONE"
+append_proxy_type = false
+reload_conf_on_request = false
+
+# 用户信息提取规则
+[[userinfo.stream_rule]]
+match = '^剩余流量：(.*?)\|总流量：(.*)$'
+replace = 'total=$2&left=$1'
+
+[[userinfo.stream_rule]]
+match = '^剩余流量：(.*?) (.*)$'
+replace = 'total=$1&left=$2'
+
+[[userinfo.stream_rule]]
+match = '^Bandwidth: (.*?)/(.*)$'
+replace = 'used=$1&total=$2'
+
+[[userinfo.stream_rule]]
+match = '^\\[.*?\\]剩余(.*?)@(?:.*)$'
+replace = 'total=$1'
+
+[[userinfo.stream_rule]]
+match = '^.*?流量:(.*?) 剩:(?:.*)$'
+replace = 'total=$1'
+
+[[userinfo.time_rule]]
+match = '^[到过]期时间：(\\d+)-(\\d+)-(\\d+) (\\d+):(\\d+):(\\d+)$'
+replace = '$1:$2:$3:$4:$5:$6'
+
+[[userinfo.time_rule]]
+match = '^[到过]期：(\\d+)-(\\d+)-(\\d+) (\\d+):(\\d+):(\\d+)$'
+replace = '$1:$2:$3:$4:$5:$6'
+
+[[userinfo.time_rule]]
+match = '^[到过]期时间(:|：)(\\d+)-(\\d+)-(\\d+)$'
+replace = '$1:$2:$3:0:0:0'
+
+[[userinfo.time_rule]]
+match = '^[到过]期(:|：)(\\d+)-(\\d+)-(\\d+)$'
+replace = '$1:$2:$3:0:0:0'
+
+[[userinfo.time_rule]]
+match = '^Smart Access expire: (\\d+)/(\\d+)/(\\d+)$'
+replace = '$1:$2:$3:0:0:0'
+
+[[userinfo.time_rule]]
+match = '^.*?流量:(?:.*?) 剩:(.*)$'
+replace = 'left=$1d'
+
+[node_pref]
+sort_flag = false
+filter_deprecated_nodes = false
+append_sub_userinfo = true
+clash_use_new_field_name = true
+clash_proxies_style = "flow"
+clash_proxy_groups_style = "block"
+singbox_add_clash_modes = true
+
+# 节点重命名规则 (修正版)
+[[node_pref.rename_node]]
+match = '!!GROUP=渡口!!(^.+$)'
+replace = '[机][渡口] - $1'
+
+[[node_pref.rename_node]]
+match = '!!GROUP=element!!(^.+$)'
+replace = '[机][element] - $1'
+
+[[node_pref.rename_node]]
+match = '!!GROUP=飞鸟!!(^.+$)'
+replace = '[机][飞鸟] - $1'
+
+[[node_pref.rename_node]]
+match = '!!GROUP=花云!!(^.+$)'
+replace = '[机][花云] - $1'
+
+[[node_pref.rename_node]]
+match = '!!GROUP=家宽!!(^.+$)'
+replace = '[家] - $1'
+
+[[node_pref.rename_node]]
+match = '!!GROUP=落地!!(^.+$)'
+replace = '[落] - $1'
+
+[managed_config]
+write_managed_config = true
+managed_config_prefix = "http://127.0.0.1:25500"
+config_update_interval = 86400
+config_update_strict = false
+quanx_device_id = ""
+
+[surge_external_proxy]
+resolve_hostname = true
+
+[emojis]
+add_emoji = false
+remove_old_emoji = true
+
+# 自定义分组
+[[custom_groups]]
+name = "✈️ 起飞出国"
+type = "select"
+rule = ["[]✋🏻 手动切换", "[]🔗 链-香港", "[]🔗 链-台湾", "[]🔗 链-日本", "[]🔗 链-新加坡", "[]🔗 链-美国", "[]🔰 国内直连"]
+
+[[custom_groups]]
+name = "✋🏻 手动切换"
+type = "select"
+rule = ["[]🇭🇰 香港节点", "[]🇨🇳 台湾节点", "[]🇯🇵 日本节点", "[]🇸🇬 新加坡节点", "[]🇰🇷 韩国节点", "[]🇺🇲 美国节点", "[]🧺 其他节点"]
+
+[[custom_groups]]
+name = "🔰 国内直连"
+type = "select"
+rule = ["[]DIRECT"]
+
+[[custom_groups]]
+name = "⛔️ 广告拦截"
+type = "select"
+rule = ["[]REJECT"]
+
+[[custom_groups]]
+name = "🐟 漏网之鱼"
+type = "select"
+rule = ["[]✈️ 起飞出国", "[]✋🏻 手动切换", "[]🔰 国内直连", "[]🔗 链-香港", "[]🔗 链-台湾", "[]🔗 链-日本", "[]🔗 链-美国", "[]🇭🇰 香港节点", "[]🇨🇳 台湾节点", "[]🇯🇵 日本节点", "[]🇸🇬 新加坡节点", "[]🇰🇷 韩国节点", "[]🇺🇲 美国节点", "[]🧺 其他节点"]
+
+# 家宽落地手选
+[[custom_groups]]
+name = "🏠 家-香港落地"
+type = "select"
+rule = ['(?=.*(\[家\]|\[落\]))(?=.*香港).*']
+
+[[custom_groups]]
+name = "🏠 家-台湾落地"
+type = "select"
+rule = ['(?=.*(\[家\]|\[落\]))(?=.*台湾).*']
+
+[[custom_groups]]
+name = "🏠 家-日本落地"
+type = "select"
+rule = ['(?=.*(\[家\]|\[落\]))(?=.*日本).*']
+
+[[custom_groups]]
+name = "🏠 家-新加坡落地"
+type = "select"
+rule = ['(?=.*(\[家\]|\[落\]))(?=.*新加坡).*']
+
+[[custom_groups]]
+name = "🏠 家-美国落地"
+type = "select"
+rule = ['(?=.*(\[家\]|\[落\]))(?=.*美国).*']
+
+# 业务策略组
+[[custom_groups]]
+name = "🎬 国外媒体"
+type = "select"
+rule = ["[]✈️ 起飞出国", "[]🔗 链-香港", "[]🔗 链-台湾", "[]🔗 链-日本", "[]🔗 链-新加坡", "[]🔗 链-美国", "[]🇭🇰 香港节点", "[]🇨🇳 台湾节点", "[]🇯🇵 日本节点", "[]🇸🇬 新加坡节点", "[]🇰🇷 韩国节点", "[]🇺🇲 美国节点", "[]🧺 其他节点"]
+
+[[custom_groups]]
+name = "🤖 ChatGPT"
+type = "select"
+rule = ["[]✈️ 起飞出国", "[]🔗 链-香港", "[]🔗 链-台湾", "[]🔗 链-日本", "[]🔗 链-新加坡", "[]🔗 链-美国", "[]🇭🇰 香港节点", "[]🇨🇳 台湾节点", "[]🇯🇵 日本节点", "[]🇸🇬 新加坡节点", "[]🇰🇷 韩国节点", "[]🇺🇲 美国节点", "[]🧺 其他节点"]
+
+[[custom_groups]]
+name = "🎦 Netflix"
+type = "select"
+rule = ["[]✈️ 起飞出国", "[]🔗 链-香港", "[]🔗 链-台湾", "[]🔗 链-日本", "[]🔗 链-新加坡", "[]🔗 链-美国", "[]🇭🇰 香港节点", "[]🇨🇳 台湾节点", "[]🇯🇵 日本节点", "[]🇸🇬 新加坡节点", "[]🇰🇷 韩国节点", "[]🇺🇲 美国节点", "[]🧺 其他节点"]
+
+[[custom_groups]]
+name = "🅳 Disney+"
+type = "select"
+rule = ["[]✈️ 起飞出国", "[]🔗 链-香港", "[]🔗 链-台湾", "[]🔗 链-日本", "[]🔗 链-新加坡", "[]🔗 链-美国", "[]🇭🇰 香港节点", "[]🇨🇳 台湾节点", "[]🇯🇵 日本节点", "[]🇸🇬 新加坡节点", "[]🇰🇷 韩国节点", "[]🇺🇲 美国节点", "[]🧺 其他节点"]
+
+[[custom_groups]]
+name = "™️非通用网络"
+type = "select"
+rule = ["[]✈️ 起飞出国", "[]🔗 链-香港", "[]🔗 链-台湾", "[]🔗 链-日本", "[]🔗 链-新加坡", "[]🔗 链-美国", "[]🇭🇰 香港节点", "[]🇨🇳 台湾节点", "[]🇯🇵 日本节点", "[]🇸🇬 新加坡节点", "[]🇰🇷 韩国节点", "[]🇺🇲 美国节点", "[]🧺 其他节点"]
+
+[[custom_groups]]
+name = "🍎 苹果服务"
+type = "select"
+rule = ["[]🔰 国内直连", "[]✈️ 起飞出国"]
+
+[[custom_groups]]
+name = "🎮 游戏节点"
+type = "select"
+rule = ["[]🔰 国内直连", "[]✈️ 起飞出国", "[]🇭🇰 香港节点", "[]🇨🇳 台湾节点", "[]🇯🇵 日本节点", "[]🇸🇬 新加坡节点", "[]🇰🇷 韩国节点", "[]🇺🇲 美国节点", "[]🧺 其他节点"]
+
+[[custom_groups]]
+name = "🖥️ SSH节点"
+type = "select"
+rule = ["[]🔰 国内直连", "[]✈️ 起飞出国", "[]🇭🇰 香港节点", "[]🇨🇳 台湾节点", "[]🇯🇵 日本节点", "[]🇸🇬 新加坡节点", "[]🇰🇷 韩国节点", "[]🇺🇲 美国节点", "[]🧺 其他节点"]
+
+# 地区节点分组
+[[custom_groups]]
+name = "🇭🇰 香港节点"
+type = "select"
+rule = ['(?=.*(香港|港|(?i)HK|(?i)Hong)).*']
+
+[[custom_groups]]
+name = "🇸🇬 新加坡节点"
+type = "select"
+rule = ['(?=.*(新加坡|坡|新|狮城|(?i)SG|(?i)Singapore)).*']
+
+[[custom_groups]]
+name = "🇨🇳 台湾节点"
+type = "select"
+rule = ['(?=.*(台湾|台|湾|台灣|(?i)TW|(?i)Taiwan)).*']
+
+[[custom_groups]]
+name = "🇯🇵 日本节点"
+type = "select"
+rule = ['(?=.*(日本|日|(?i)JP|(?i)Japan)).*']
+
+[[custom_groups]]
+name = "🇺🇲 美国节点"
+type = "select"
+rule = ['(?=.*(美国|美|美國|(?i)US|(?i)States|(?i)American)).*']
+
+[[custom_groups]]
+name = "🇰🇷 韩国节点"
+type = "select"
+rule = ['(?=.*(韩国|韩|韓國|南朝鲜|(?i)KR|(?i)Korean)).*']
+
+[[custom_groups]]
+name = "🧺 其他节点"
+type = "select"
+rule = ['^(?!.*(?:过期|到期|剩余|时间|流量|活动|优惠|香港|港|台湾|台|湾|台灣|日本|日|美国|美|美國|韩国|韩|韓國|南朝鲜|新加坡|坡|新|狮城|(?i:expire|expiry|expiration|due|remain|remaining|left|time|data|traffic|usage|hk|hong kong|sg|singapore|tw|taiwan|jp|japan|us|states|american|kr|korean))).*$']
+
+# 机场负载均衡
+[[custom_groups]]
+name = "⚖️ 机-香港负载"
+type = "load-balance"
+rule = ['(?=.*\[机\])(?=.*香港).*']
+strategy = "round-robin"
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 3
+
+[[custom_groups]]
+name = "⚖️ 机-日本负载"
+type = "load-balance"
+rule = ['(?=.*\[机\])(?=.*日本).*']
+strategy = "round-robin"
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 3
+
+[[custom_groups]]
+name = "⚖️ 机-台湾负载"
+type = "load-balance"
+rule = ['(?=.*\[机\])(?=.*台湾).*']
+strategy = "round-robin"
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 3
+
+[[custom_groups]]
+name = "⚖️ 机-新加坡负载"
+type = "load-balance"
+rule = ['(?=.*\[机\])(?=.*新加坡).*']
+strategy = "round-robin"
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 3
+
+[[custom_groups]]
+name = "⚖️ 机-美国负载"
+type = "load-balance"
+rule = ['(?=.*\[机\])(?=.*美国).*']
+strategy = "round-robin"
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 3
+
+[[custom_groups]]
+name = "⚖️ 负载均衡 - 新港日台专线"
+type = "load-balance"
+rule = ['(?i)^(?=.*((?i)HK|Hong Kong|香港|港|(?i)SG|Singapore|新加坡|坡|狮城|(?i)JP|Japan|日本|台湾|(?i)TW|(?i)Taiwan))(?=.*(iepl|专线)).*$']
+strategy = "consistent-hashing"
+url = "http://www.gstatic.com/generate_204"
+interval = 120
+tolerance = 3
+
+[[custom_groups]]
+name = "⚖️ 负载均衡 - 美国专线"
+type = "load-balance"
+rule = ['(?i)^(?=.*((?i)us|美国|美))(?=.*(iepl|专线)).*$']
+strategy = "consistent-hashing"
+url = "http://www.gstatic.com/generate_204"
+interval = 120
+tolerance = 3
+
+# 链式中继
+[[custom_groups]]
+name = "🔗 链-香港"
+type = "relay"
+rule = ["[]⚖️ 机-香港负载", "[]🏠 家-香港落地"]
+
+[[custom_groups]]
+name = "🔗 链-台湾"
+type = "relay"
+rule = ["[]⚖️ 机-台湾负载", "[]🏠 家-台湾落地"]
+
+[[custom_groups]]
+name = "🔗 链-日本"
+type = "relay"
+rule = ["[]⚖️ 机-日本负载", "[]🏠 家-日本落地"]
+
+[[custom_groups]]
+name = "🔗 链-新加坡"
+type = "relay"
+rule = ["[]⚖️ 机-新加坡负载", "[]🏠 家-新加坡落地"]
+
+[[custom_groups]]
+name = "🔗 链-美国"
+type = "relay"
+rule = ["[]⚖️ 机-美国负载", "[]🏠 家-美国落地"]
+
+[ruleset]
+enabled = true
+overwrite_original_rules = false
+update_ruleset_on_request = false
+
+# 规则集定义 (修正版)
+[[rulesets]]
+group = "🔰 国内直连"
+ruleset = "[]GEOIP,CN"
+
+[[rulesets]]
+group = "🐟 漏网之鱼"
+ruleset = "[]MATCH"
+
+[template]
+template_path = ""
+
+[[template.globals]]
+key = "clash.http_port"
+value = "7890"
+
+[[template.globals]]
+key = "clash.socks_port"
+value = "7891"
+
+[[template.globals]]
+key = "clash.allow_lan"
+value = "true"
+
+[[template.globals]]
+key = "clash.log_level"
+value = "info"
+
+[[template.globals]]
+key = "clash.external_controller"
+value = "127.0.0.1:9090"
+
+[[template.globals]]
+key = "singbox.allow_lan"
+value = "true"
+
+[[template.globals]]
+key = "singbox.mixed_port"
+value = "2080"
+
+[[aliases]]
+uri = "/v"
+target = "/version"
+
+[[aliases]]
+uri = "/clash"
+target = "/sub?target=clash"
+
+[[aliases]]
+uri = "/clashr"
+target = "/sub?target=clashr"
+
+[[aliases]]
+uri = "/surge"
+target = "/sub?target=surge"
+
+[[aliases]]
+uri = "/quan"
+target = "/sub?target=quan"
+
+[[aliases]]
+uri = "/quanx"
+target = "/sub?target=quanx"
+
+[[aliases]]
+uri = "/mellow"
+target = "/sub?target=mellow"
+
+[[aliases]]
+uri = "/surfboard"
+target = "/sub?target=surfboard"
+
+[[aliases]]
+uri = "/loon"
+target = "/sub?target=loon"
+
+[[aliases]]
+uri = "/ss"
+target = "/sub?target=ss"
+
+[[aliases]]
+uri = "/ssd"
+target = "/sub?target=ssd"
+
+[[aliases]]
+uri = "/sssub"
+target = "/sub?target=sssub"
+
+[[aliases]]
+uri = "/ssr"
+target = "/sub?target=ssr"
+
+[[aliases]]
+uri = "/v2ray"
+target = "/sub?target=v2ray"
+
+[[aliases]]
+uri = "/trojan"
+target = "/sub?target=trojan"
+
+[server]
+listen = "0.0.0.0"
+port = 25500
+serve_file_root = ""
+
+[advanced]
+log_level = "info"
+print_debug_info = false
+max_pending_connections = 10240
+max_concurrent_threads = 2
+max_allowed_rulesets = 0
+max_allowed_rules = 0
+max_allowed_download_size = 0
+enable_cache = false
+cache_subscription = 60
+cache_config = 300
+cache_ruleset = 216000
+script_clean_context = true
+async_fetch_ruleset = false
+skip_failed_links = false
