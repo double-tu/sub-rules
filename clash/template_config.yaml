@@ -34,11 +34,6 @@ dns:
   listen: 0.0.0.0:53
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
-  hosts:
-    "nas.tutool.top": 192.168.3.1
-    "one-api.tutool.top": 192.168.3.1
-    "new-api.tutool.top": 192.168.3.1
-    "tutool.top": 192.168.3.1
   nameserver:
     - 192.168.3.1
     - 223.5.5.5
