@@ -643,6 +643,10 @@ rules:
   - RULE-SET,Microsoft_For_AI,🤖 AI服务
   - RULE-SET,category-ai-!cn,🤖 AI服务
 
+  # 🐱 Github
+  - RULE-SET,Proxy_4_github_old,🐱 Github
+  - RULE-SET,GitHub_New,🐱 Github
+
   # 🔍 谷歌服务 (通用搜索、云服务)
   - RULE-SET,Proxy_3_google_old,🔍 谷歌服务
   - RULE-SET,Google_New,🔍 谷歌服务
@@ -707,10 +711,6 @@ rules:
   - RULE-SET,hulu,🎬 流媒体
   - RULE-SET,amazon,🎬 流媒体
   - RULE-SET,bahamut,🎬 流媒体
-
-  # 🐱 Github
-  - RULE-SET,Proxy_4_github_old,🐱 Github
-  - RULE-SET,GitHub_New,🐱 Github
 
   # 🎮 游戏平台
   - RULE-SET,Game_Epic,🎮 游戏平台
