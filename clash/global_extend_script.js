@@ -75,7 +75,7 @@ function main(config) {
       url: "http://www.gstatic.com/generate_204",
       interval: 300,
       strategy: "round-robin",
-      regex: /(?=.*\[机\])(?=.*香港)/i,
+      regex: /^(?=.*\[机\])(?=.*\[专线\])(?=.*香港).*/i,
     },
     {
       name: "⚖️ 机-日本负载",
@@ -83,7 +83,7 @@ function main(config) {
       url: "http://www.gstatic.com/generate_204",
       interval: 300,
       strategy: "round-robin",
-      regex: /(?=.*\[机\])(?=.*日本)/i,
+      regex: /^(?=.*\[机\])(?=.*\[专线\])(?=.*日本).*/i,
     },
     {
       name: "⚖️ 机-台湾负载",
@@ -91,7 +91,7 @@ function main(config) {
       url: "http://www.gstatic.com/generate_204",
       interval: 300,
       strategy: "round-robin",
-      regex: /(?=.*\[机\])(?=.*台湾)/i,
+      regex: /^(?=.*\[机\])(?=.*\[专线\])(?=.*台湾).*/i,
     },
     {
       name: "⚖️ 机-新加坡负载",
@@ -99,7 +99,7 @@ function main(config) {
       url: "http://www.gstatic.com/generate_204",
       interval: 300,
       strategy: "round-robin",
-      regex: /(?=.*\[机\])(?=.*新加坡)/i,
+      regex: /^(?=.*\[机\])(?=.*\[专线\])(?=.*新加坡).*/i,
     },
     {
       name: "⚖️ 机-美国负载",
@@ -107,7 +107,7 @@ function main(config) {
       url: "http://www.gstatic.com/generate_204",
       interval: 300,
       strategy: "round-robin",
-      regex: /(?=.*\[机\])(?=.*美国)/i,
+      regex: /^(?=.*\[机\])(?=.*\[专线\])(?=.*美国).*/i,
     },
 
     // --- 专线负载均衡 (Load-Balance) ---
