@@ -46,7 +46,6 @@ tun:
 rule-providers:
   AdBlock_1: {type: http, behavior: classical, url: https://raw.githubusercontent.com/double-tu/sub-rules/master/clash/Reject.yaml, path: ./ruleset/AdBlock_1.yaml, interval: 300}
   AdBlock_2_quanx: {type: http, behavior: domain, url: https://raw.githubusercontent.com/double-tu/sub-rules/master/quanx/Tu_AdBlock.list, path: ./ruleset/AdBlock_2_quanx.list, interval: 86400}
-  AdBlock_3: {type: http, behavior: classical, url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Guard/Advertising.list, path: ./ruleset/AdBlock_3.yaml, interval: 86400}
   AdBlock_4: {type: http, behavior: classical, url: https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/AdRule.list, path: ./ruleset/AdBlock_4.yaml, interval: 86400}
   AdBlock_5: {type: http, behavior: classical, url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list, path: ./ruleset/AdBlock_5.yaml, interval: 86400}
   AdBlock_6: {type: http, behavior: classical, url: https://raw.githubusercontent.com/Semporia/Clash-X/master/Rule/AdBlock.yaml, path: ./ruleset/AdBlock_6.yaml, interval: 86400}
@@ -61,8 +60,6 @@ rule-providers:
   Direct_9_domain: {type: http, behavior: domain, url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt, path: ./ruleset/Direct_9_domain.txt, interval: 86400}
   Direct_New_1: {type: http, behavior: classical, url: https://raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/Direct.list, path: ./ruleset/Direct_New_1.yaml, interval: 86400}
   Direct_New_2: {type: http, behavior: classical, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/ChinaMax/ChinaMax.list, path: ./ruleset/Direct_New_2.yaml, interval: 86400}
-  Apple_1: {type: http, behavior: classical, url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Extra/Apple/AppStore.list, path: ./ruleset/Apple_1.yaml, interval: 86400}
-  Apple_2: {type: http, behavior: classical, url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Extra/Apple/AppStoreConnect.list, path: ./ruleset/Apple_2.yaml, interval: 86400}
   Apple_3: {type: http, behavior: classical, url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list, path: ./ruleset/Apple_3.yaml, interval: 86400}
   Apple_4: {type: http, behavior: classical, url: https://raw.githubusercontent.com/Semporia/Clash-X/master/Rule/Apple.yaml, path: ./ruleset/Apple_4.yaml, interval: 86400}
   Apple_New: {type: http, behavior: classical, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.list, path: ./ruleset/Apple_New.yaml, interval: 86400}
@@ -76,8 +73,6 @@ rule-providers:
   Perplexity_New: {type: http, behavior: classical, url: https://raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/Perplexity.list, path: ./ruleset/Perplexity_New.yaml, interval: 86400}
   Microsoft_For_AI: {type: http, behavior: classical, url: https://raw.githubusercontent.com/Semporia/Clash/a5e52de7e4fd3851a9b03500b9e4763902069e7f/Rule/Microsoft.yaml, path: ./ruleset/Microsoft_For_AI.yaml, interval: 3600}
   D_8_microsoft: {type: http, behavior: classical, url: https://raw.githubusercontent.com/Semporia/Clash-X/master/Rule/Microsoft.yaml, path: ./ruleset/D_8_microsoft.yaml, interval: 86400}
-  Netflix_1: {type: http, behavior: classical, url: https://raw.githubusercontent.com/Semporia/ClashX-Pro/master/Filter/Netflix.yaml, path: ./ruleset/Netflix_1.yaml, interval: 86400}
-  Netflix_2: {type: http, behavior: classical, url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/StreamingMedia/Video/Netflix.list, path: ./ruleset/Netflix_2.yaml, interval: 86400}
   Netflix_3: {type: http, behavior: classical, url: https://raw.githubusercontent.com/Semporia/Clash-X/master/Rule/Netflix.yaml, path: ./ruleset/Netflix_3.yaml, interval: 86400}
   Netflix_New: {type: http, behavior: classical, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.list, path: ./ruleset/Netflix_New.yaml, interval: 86400}
   DisneyPlus: {type: http, behavior: classical, url: https://raw.githubusercontent.com/pzg417/rules/111a98098ff7a293080d3727f88bb32e5052ceca/Disney_Plus, path: ./ruleset/DisneyPlus.yaml, interval: 3600}
@@ -104,7 +99,6 @@ rule-providers:
   Game_UBI: {type: http, behavior: classical, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/UBI/UBI.list, path: ./ruleset/Game_UBI.yaml, interval: 86400}
   Game_Sony: {type: http, behavior: classical, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Sony/Sony.list, path: ./ruleset/Game_Sony.yaml, interval: 86400}
   Game_Nintendo: {type: http, behavior: classical, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Nintendo/Nintendo.list, path: ./ruleset/Game_Nintendo.yaml, interval: 86400}
-  Crypto_OKX: {type: http, behavior: classical, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/OKX/OKX.list, path: ./ruleset/Crypto_OKX.yaml, interval: 86400}
   Crypto_Bybit: {type: http, behavior: domain, url: https://raw.githubusercontent.com/v2fly/domain-list-community/refs/heads/master/data/bybit, path: ./ruleset/Crypto_Bybit.list, interval: 86400}
   Crypto_XNB: {type: http, behavior: classical, url: https://raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/xnb.list, path: ./ruleset/Crypto_XNB.yaml, interval: 86400}
   Proxy_1: {type: http, behavior: classical, url: https://raw.githubusercontent.com/double-tu/sub-rules/master/clash/Global.yaml, path: ./ruleset/Proxy_1.yaml, interval: 300}
@@ -120,7 +114,6 @@ rule-providers:
   Proxy_11_domain: {type: http, behavior: domain, url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt, path: ./ruleset/Proxy_11_domain.txt, interval: 86400}
   Proxy_12_gfw_domain: {type: http, behavior: domain, url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt, path: ./ruleset/Proxy_12_gfw_domain.txt, interval: 86400}
   Proxy_13_greatfire_domain: {type: http, behavior: domain, url: https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/greatfire.txt, path: ./ruleset/Proxy_13_greatfire_domain.txt, interval: 86400}
-  GitHub_New: {type: http, behavior: classical, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GitHub/GitHub.list, path: ./ruleset/GitHub_New.yaml, interval: 86400}
   Google_New: {type: http, behavior: classical, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Google/Google.list, path: ./ruleset/Google_New.yaml, interval: 86400}
   Amazon_New: {type: http, behavior: classical, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Amazon/Amazon.list, path: ./ruleset/Amazon_New.yaml, interval: 86400}
   Microsoft_New: {type: http, behavior: classical, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.list, path: ./ruleset/Microsoft_New.yaml, interval: 86400}
@@ -134,7 +127,6 @@ rule-providers:
   github: {type: http, format: mrs, behavior: domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/github.mrs", path: ./ruleset/github.mrs, interval: 86400}
   gitlab: {type: http, format: mrs, behavior: domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/gitlab.mrs", path: ./ruleset/gitlab.mrs, interval: 86400}
   microsoft: {type: http, format: mrs, behavior: domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/microsoft.mrs", path: ./ruleset/microsoft.mrs, interval: 86400}
-  apple: {type: http, format: mrs, behavior: domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple.mrs", path: ./ruleset/apple.mrs, interval: 86400}
   facebook: {type: http, format: mrs, behavior: domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/facebook.mrs", path: ./ruleset/facebook.mrs, interval: 86400}
   instagram: {type: http, format: mrs, behavior: domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/instagram.mrs", path: ./ruleset/instagram.mrs, interval: 86400}
   twitter: {type: http, format: mrs, behavior: domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/twitter.mrs", path: ./ruleset/twitter.mrs, interval: 86400}
@@ -169,6 +161,24 @@ rule-providers:
   geolocation-!cn: {type: http, format: mrs, behavior: domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/geolocation-!cn.mrs", path: ./ruleset/geolocation-!cn.mrs, interval: 86400}
   private: {type: http, format: mrs, behavior: ipcidr, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/private.mrs", path: ./ruleset/private.mrs, interval: 86400}
   telegram: {type: http, format: mrs, behavior: ipcidr, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/telegram.mrs", path: ./ruleset/telegram.mrs, interval: 86400}
+  Google_Classical: {type: http, behavior: classical, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml, path: ./ruleset/Google_Classical.yaml, interval: 86400}
+  
+  OneDrive_Classical: {type: http, behavior: classical, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OneDrive/OneDrive.yaml, path: ./ruleset/OneDrive_Classical.yaml, interval: 86400}
+  
+  Microsoft_Classical: {type: http, behavior: classical, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml, path: ./ruleset/Microsoft_Classical.yaml, interval: 86400}
+  
+  Global_Classical: {type: http, behavior: classical, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global_Classical.yaml, path: ./ruleset/Global_Classical.yaml, interval: 86400}
+  Global_Domain: {type: http, behavior: domain, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global_Domain.txt, path: ./ruleset/Global_Domain.txt, interval: 86400}
+  
+  GlobalMedia_Classical: {type: http, behavior: classical, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia_Classical.yaml, path: ./ruleset/GlobalMedia_Classical.yaml, interval: 86400}
+  GlobalMedia_Domain: {type: http, behavior: domain, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia_Domain.txt, path: ./ruleset/GlobalMedia_Domain.txt, interval: 86400}
+  
+  Gemini_Classical: {type: http, behavior: classical, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Gemini/Gemini.yaml, path: ./ruleset/Gemini_Classical.yaml, interval: 86400}
+  
+  Claude_Classical: {type: http, behavior: classical, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Claude/Claude.yaml, path: ./ruleset/Claude_Classical.yaml, interval: 86400}
+  
+  OpenAI_Classical: {type: http, behavior: classical, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml, path: ./ruleset/OpenAI_Classical.yaml, interval: 86400}
+
 
 profile:
   store-selected: true
@@ -518,7 +528,6 @@ rules:
   - DOMAIN-SUFFIX,access-sngapm.qcloud.com,⛔️ 广告拦截
   - RULE-SET,AdBlock_1,⛔️ 广告拦截
   - RULE-SET,AdBlock_2_quanx,⛔️ 广告拦截
-  - RULE-SET,AdBlock_3,⛔️ 广告拦截
   - RULE-SET,AdBlock_4,⛔️ 广告拦截
   - RULE-SET,AdBlock_5,⛔️ 广告拦截
   - RULE-SET,AdBlock_6,⛔️ 广告拦截
@@ -606,6 +615,14 @@ rules:
   # ==========================================
   # 2. 特定APP/网站 (精细化分流)
   # ==========================================
+  
+  # 🔍 谷歌服务 (通用搜索、云服务)
+  - RULE-SET,Proxy_3_google_old,🔍 谷歌服务
+  - RULE-SET,Google_New,🔍 谷歌服务
+  - RULE-SET,google,🔍 谷歌服务
+  - RULE-SET,Gemini_Classical,🔍 谷歌服务
+  - RULE-SET,Google_Classical,🔍 谷歌服务
+  
   # 🤖 AI 服务 (ChatGPT, Claude, Gemini)
   - RULE-SET,ChatGPT_1,🤖 AI服务
   - RULE-SET,ChatGPT_2,🤖 AI服务
@@ -617,20 +634,19 @@ rules:
   - RULE-SET,Perplexity_New,🤖 AI服务
   - RULE-SET,Microsoft_For_AI,🤖 AI服务
   - RULE-SET,category-ai-!cn,🤖 AI服务
+  - RULE-SET,Claude_Classical,🤖 AI服务
+  - RULE-SET,OpenAI_Classical,🤖 AI服务
+
 
   # 🐱 Github
   - RULE-SET,Proxy_4_github_old,🐱 Github
-  - RULE-SET,GitHub_New,🐱 Github
-
-  # 🔍 谷歌服务 (通用搜索、云服务)
-  - RULE-SET,Proxy_3_google_old,🔍 谷歌服务
-  - RULE-SET,Google_New,🔍 谷歌服务
-  - RULE-SET,google,🔍 谷歌服务
 
   # Ⓜ️ 微软服务
   - RULE-SET,D_8_microsoft,Ⓜ️ 微软服务
   - RULE-SET,Microsoft_New,Ⓜ️ 微软服务
   - RULE-SET,microsoft,Ⓜ️ 微软服务
+  - RULE-SET,Microsoft_Classical,Ⓜ️ 微软服务
+  - RULE-SET,OneDrive_Classical,Ⓜ️ 微软服务
 
 
   # 📲 电报消息 (Telegram)
@@ -645,8 +661,6 @@ rules:
   - RULE-SET,youtube,📹 油管视频
 
   # 🎦 Netflix
-  - RULE-SET,Netflix_1,🎦 Netflix
-  - RULE-SET,Netflix_2,🎦 Netflix
   - RULE-SET,Netflix_3,🎦 Netflix
   - RULE-SET,Netflix_New,🎦 Netflix
   - RULE-SET,netflix,🎦 Netflix
@@ -686,6 +700,7 @@ rules:
   - RULE-SET,hulu,🎬 流媒体
   - RULE-SET,amazon,🎬 流媒体
   - RULE-SET,bahamut,🎬 流媒体
+  - RULE-SET,GlobalMedia_Classical,🎬 流媒体
 
   # 🎮 游戏平台
   - RULE-SET,Game_Epic,🎮 游戏平台
@@ -704,7 +719,6 @@ rules:
 
   # 💰 金融服务
   - RULE-SET,Proxy_8_paypal,💰 金融服务
-  - RULE-SET,Crypto_OKX,💰 金融服务
   - RULE-SET,Crypto_Bybit,💰 金融服务
   - RULE-SET,Crypto_XNB,💰 金融服务
   - RULE-SET,paypal,💰 金融服务
@@ -714,12 +728,9 @@ rules:
   - RULE-SET,wise,💰 金融服务
 
   # 🍎 苹果服务
-  - RULE-SET,Apple_1,🍎 苹果服务
-  - RULE-SET,Apple_2,🍎 苹果服务
   - RULE-SET,Apple_3,🍎 苹果服务
   - RULE-SET,Apple_4,🍎 苹果服务
   - RULE-SET,Apple_New,🍎 苹果服务
-  - RULE-SET,apple,🍎 苹果服务
 
   # ==========================================
   # 4. 宽泛代理 (上述未匹配的国外流量)
@@ -735,6 +746,13 @@ rules:
   - RULE-SET,Proxy_11_domain,✈️ 起飞出国
   - RULE-SET,Proxy_12_gfw_domain,✈️ 起飞出国
   - RULE-SET,Proxy_13_greatfire_domain,✈️ 起飞出国
+  
+  # 全球网站规则集
+  - RULE-SET,Global_Classical,✈️ 起飞出国
+  
+  # 域名规则集（与Global_Resolve配合使用）
+  - RULE-SET,Global_Domain,✈️ 起飞出国
+  - RULE-SET,GlobalMedia_Domain,🎬 流媒体
 
   # ==========================================
   # 5. 国内直连 (兜底直连，防止误杀)
