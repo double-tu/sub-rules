@@ -508,32 +508,7 @@ proxy-groups:
       - 🔰 国内直连
       - ✈️ 起飞出国
 
-  # 5. 链式代理 (Relay)
-  - name: 🔗 链-香港
-    type: relay
-    proxies:
-      - ⚖️ 机-香港负载
-      - 🏠 家-香港落地
-  - name: 🔗 链-台湾
-    type: relay
-    proxies:
-      - ⚖️ 机-台湾负载
-      - 🏠 家-台湾落地
-  - name: 🔗 链-日本
-    type: relay
-    proxies:
-      - ⚖️ 机-日本负载
-      - 🏠 家-日本落地
-  - name: 🔗 链-新加坡
-    type: relay
-    proxies:
-      - ⚖️ 机-新加坡负载
-      - 🏠 家-新加坡落地
-  - name: 🔗 链-美国
-    type: relay
-    proxies:
-      - ⚖️ 机-美国负载
-      - 🏠 家-美国落地
+
 
 rules:
   # ==========================================
