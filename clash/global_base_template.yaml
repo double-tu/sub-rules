@@ -615,6 +615,12 @@ rules:
   # ==========================================
   # 2. 特定APP/网站 (精细化分流)
   # ==========================================
+
+  # 📹 油管视频 (YouTube)
+  - RULE-SET,YouTube_Old,📹 油管视频
+  - RULE-SET,YouTube_New_1,📹 油管视频
+  - RULE-SET,YouTube_New_2,📹 油管视频
+  - RULE-SET,youtube,📹 油管视频
   
   # 🔍 谷歌服务 (通用搜索、云服务)
   - RULE-SET,Proxy_3_google_old,🔍 谷歌服务
@@ -653,12 +659,6 @@ rules:
   - RULE-SET,Telegram_Old,📲 电报消息
   - RULE-SET,Telegram_New,📲 电报消息
   - RULE-SET,telegram,📲 电报消息,no-resolve
-
-  # 📹 油管视频 (YouTube)
-  - RULE-SET,YouTube_Old,📹 油管视频
-  - RULE-SET,YouTube_New_1,📹 油管视频
-  - RULE-SET,YouTube_New_2,📹 油管视频
-  - RULE-SET,youtube,📹 油管视频
 
   # 🎦 Netflix
   - RULE-SET,Netflix_3,🎦 Netflix
